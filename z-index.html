@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Z-Index Example</title>
+    <style>
+        .container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 2px solid #333;
+            margin: 20px auto;
+        }
+
+        .box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .box1 {
+            background-color: red;
+            top: 50px;
+            left: 50px;
+            z-index: 1; /* This element will appear below others with higher z-index */
+        }
+
+        .box2 {
+            background-color: green;
+            top: 80px;
+            left: 80px;
+            z-index: 3; /* This element will appear above box1 and box3 */
+        }
+
+        .box3 {
+            background-color: blue;
+            top: 110px;
+            left: 110px;
+            z-index: 2; /* This element will appear between box1 and box2 */
+        }
+    </style>
+</head>
+<body>
+    <h1>Z-Index Example</h1>
+    <div class="container">
+        <div class="box box1">1 box</div>
+        <div class="box box2">2 box</div>
+        <div class="box box3">3 box</div>
+    </div>
+</body>
+</html>

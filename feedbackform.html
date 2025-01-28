@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Feedback Form</h2>
+        <form action="#" method="post">
+            <!-- Name -->
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <!-- Email -->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <!-- Rating (Radio Buttons) -->
+            <label>How would you rate your experience?</label>
+            <input type="radio" id="excellent" name="rating" value="excellent" required>
+            <label for="excellent">Excellent</label>
+            <input type="radio" id="good" name="rating" value="good">
+            <label for="good">Good</label>
+            <input type="radio" id="average" name="rating" value="average">
+            <label for="average">Average</label>
+            <input type="radio" id="poor" name="rating" value="poor">
+            <label for="poor">Poor</label>
+
+            <!-- Services (Checkboxes) -->
+            <label>Which of the following services did you use?</label>
+            <input type="checkbox" id="service1" name="services" value="website">
+            <label for="service1">Website</label>
+            <input type="checkbox" id="service2" name="services" value="customer-support">
+            <label for="service2">Customer Support</label>
+            <input type="checkbox" id="service3" name="services" value="mobile-app">
+            <label for="service3">Mobile App</label>
+
+            <!-- Suggestions (Dropdown Menu) -->
+            <label for="improve">How can we improve?</label>
+            <select id="improve" name="improve">
+                <option value="">Select an option</option>
+                <option value="faster-service">Faster Service</option>
+                <option value="better-navigation">Better Navigation</option>
+                <option value="more-features">More Features</option>
+                <option value="other">Other</option>
+            </select>
+
+            <!-- Additional Feedback (Textarea) -->
+            <label for="comments">Additional Feedback:</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Write your feedback here..."></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+</body>
+</html>
