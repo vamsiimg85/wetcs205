@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple E-Commerce</title>
+    <title>Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,6 +33,28 @@
         .container {
             padding: 100px 20px 20px;
         }
+        .login-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            text-align: left;
+            background-color: #f9f9f9;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
         .footer {
             background-color: #333;
             color: white;
@@ -47,7 +69,7 @@
     <div class="header">
         <h1>Static E-Commerce</h1>
         <div class="nav">
-            <a href="login.html">Login</a>
+            <a href="index.html">Home</a>
             <a href="register.html">Register</a>
             <a href="cart.html">Cart</a>
             <a href="contact.html">Contact</a>
@@ -56,8 +78,18 @@
     </div>
     
     <div class="container">
-        <h2>Welcome to our E-Commerce Store</h2>
-        <p>Explore our wide range of products by visiting the <a href="products.html">Products</a> page.</p>
+        <h2>Login</h2>
+        <div class="login-box">
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+        </div>
     </div>
     
     <div class="footer">

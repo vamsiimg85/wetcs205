@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Simple E-Commerce</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .nav {
+            margin-top: 10px;
+        }
+        .nav a {
+            margin: 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .container {
+            padding: 100px 20px 20px;
+        }
+        .cart-table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        .cart-table th, .cart-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .cart-table th {
+            background-color: #333;
+            color: white;
+        }
+        .cart-table td {
+            text-align: center;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Static E-Commerce</h1>
+        <div class="nav">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+            <a href="cart.html">Cart</a>
+            <a href="contact.html">Contact</a>
+            <a href="products.html">Products</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2>Your Shopping Cart</h2>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Product 1</td>
+                    <td>$20.00</td>
+                    <td>1</td>
+                    <td>$20.00</td>
+                </tr>
+                <tr>
+                    <td>Product 2</td>
+                    <td>$15.00</td>
+                    <td>2</td>
+                    <td>$30.00</td>
+                </tr>
+                <tr>
+                    <td>Product 3</td>
+                    <td>$25.00</td>
+                    <td>1</td>
+                    <td>$25.00</td>
+                </tr>
+                <tr>
+                    <td colspan="3"><strong>Total</strong></td>
+                    <td><strong>$75.00</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2025 Static E-Commerce</p>
+    </div>
+</body>
+</html>

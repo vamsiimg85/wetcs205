@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple E-Commerce</title>
+    <title>Products</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,6 +33,21 @@
         .container {
             padding: 100px 20px 20px;
         }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
         .footer {
             background-color: #333;
             color: white;
@@ -47,17 +62,33 @@
     <div class="header">
         <h1>Static E-Commerce</h1>
         <div class="nav">
+            <a href="index.html">Home</a>
             <a href="login.html">Login</a>
             <a href="register.html">Register</a>
             <a href="cart.html">Cart</a>
             <a href="contact.html">Contact</a>
-            <a href="products.html">Products</a>
         </div>
     </div>
     
     <div class="container">
-        <h2>Welcome to our E-Commerce Store</h2>
-        <p>Explore our wide range of products by visiting the <a href="products.html">Products</a> page.</p>
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/product1.jpg" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>$10.00</p>
+            </div>
+            <div class="product">
+                <img src="images/product2.jpg" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>$15.00</p>
+            </div>
+            <div class="product">
+                <img src="images/product3.jpg" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>$20.00</p>
+            </div>
+        </div>
     </div>
     
     <div class="footer">
