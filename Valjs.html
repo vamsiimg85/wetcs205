@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form Validation</title>
+    
+</head>
+<body>
+
+    <div ALIGN="center">
+        <h2>Login</h2>
+        <form onsubmit="return validateForm()">
+            <input type="text" id="email" placeholder="Email or Phone">
+            <div class="error" id="emailError"></div>
+
+            <input type="password" id="password" placeholder="Password">
+            <div class="error" id="passwordError"></div>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value.trim();
+            var password = document.getElementById("password").value.trim();
+            var valid = true;
+
+            document.getElementById("emailError").innerHTML = "";
+            document.getElementById("passwordError").innerHTML = "";
+
+            if (email === "") {
+                document.getElementById("emailError").innerHTML = "Email or Phone is required.";
+                valid = false;
+            }
+
+            if (password === "") {
+                document.getElementById("passwordError").innerHTML = "Password is required.";
+                valid = false;
+            }
+
+            return valid;
+        }
+    </script>
+
+</body>
+</html>

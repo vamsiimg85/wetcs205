@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+    <script>
+        function calculateFactorial() {
+            // Get the number entered by the user
+            var num = document.getElementById("numberInput").value;
+            
+            // Validate if the input is a positive integer
+            if (num < 0 || isNaN(num) || num === "") {
+                alert("Please enter a positive integer.");
+                return;
+            }
+            
+            // Calculate the factorial
+            var factorial = 1;
+            for (var i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+
+            // Display the result
+            document.getElementById("result").innerHTML = "Factorial of " + num + " is: " + factorial;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Factorial Calculator</h2>
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" min="0" placeholder="Enter a positive number">
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+
+    <p id="result"></p>
+
+</body>
+</html>

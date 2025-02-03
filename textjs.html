@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Textbox Handling</title>
+    <script>
+        function showValue() {
+            var inputText = document.getElementById("myTextbox").value;
+            document.getElementById("display").innerHTML = "Entered Text: " + inputText;
+        }
+
+        function clearTextbox() {
+            document.getElementById("myTextbox").value = "";
+            document.getElementById("display").innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+
+    <label>Enter something:</label>
+    <input type="text" id="myTextbox">
+    <button onclick="showValue()">Show Value</button>
+    <button onclick="clearTextbox()">Clear</button>
+    <p id="display"></p>
+
+</body>
+</html>

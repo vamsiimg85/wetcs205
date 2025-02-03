@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>Change Background Color</title>
+    <script>
+        function changeBackgroundColor() {
+            // Get the value entered by the user in the input field
+            var color = document.getElementById("colorInput").value;
+            // Change the background color of the body element
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Change the Background Color</h2>
+    <label for="colorInput">Enter Color (e.g., red, blue, #ff5733):</label>
+    <input type="text" id="colorInput" placeholder="Enter a color">
+    <button onclick="changeBackgroundColor()">Change Background</button>
+
+</body>
+</html>
