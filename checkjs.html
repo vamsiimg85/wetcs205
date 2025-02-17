@@ -5,13 +5,17 @@
     <script>
         function getSelectedValues() {
             var checkboxes = document.getElementsByName("hobby");
+            
             var selectedValues = [];
+           
             for (var i = 0; i < checkboxes.length; i++) {
                 if (checkboxes[i].checked) {
                     selectedValues.push(checkboxes[i].value);
                 }
             }
-            document.getElementById("result").innerHTML = "Selected Hobbies: " + selectedValues.join(", ");
+            
+document.getElementById("result").innerHTML = "Selected Hobbies: " + selectedValues.join(", ");
+           
         }
     </script>
 </head>
@@ -22,8 +26,10 @@
     <label><input type="checkbox" name="hobby" value="Music"> Music</label>
     <label><input type="checkbox" name="hobby" value="Sports"> Sports</label>
     <br><br>
+    
     <button onclick="getSelectedValues()">Show Selected</button>
     <p id="result"></p>
+   
 
 </body>
 </html>
