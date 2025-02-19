@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validation</title>
+<style>
+  .error {
+    color: red;
+  }
+</style>
+</head>
+<body>
+
+<h2>Appointment Booking</h2>
+
+<form name="appointmentForm" onsubmit="return validateForm()" method="post">
+  <div>
+    <label for="name">Name:*</label><br>
+    <input type="text" id="name" name="name">
+    <span id="nameError" class="error"></span>
+  </div>
+  <br>
+  <div>
+    <label for="email">Email:*</label><br>
+    <input type="text" id="email" name="email">
+    <span id="emailError" class="error"></span>
+  </div>
+  <br>
+  <div>
+    <label for="phone">Phone:*</label><br>
+    <input type="text" id="phone" name="phone">
+    <span id="phoneError" class="error"></span>
+  </div>
+  <br>
+  <div>
+    <label for="date">Appointment Date:*</label><br>
+    <input type="text" id="date" name="date" placeholder="DD/MM/YYYY">
+    <span id="dateError" class="error"></span>
+  </div>
+  <br>
+  <div>
+    <label for="time">Appointment Time:*</label><br>
+    <input type="text" id="time" name="time" placeholder="HH:MM AM/PM">
+    <span id="timeError" class="error"></span>
+  </div>
+  <br>
+
+  <input type="submit" value="Book Now">
+</form>
+
+<script>
+function validateForm() {
+  // Reset error messages
+  document.getElementById("nameError").textContent = "";
+  document.getElementById("emailError").textContent = "";
+  document.getElementById("phoneError").textContent = "";
+  document.getElementById("dateError").textContent = "";
+  document.getElementById("timeError").textContent = "";
+
+  // Get form values
+  let name = document.forms["appointmentForm"]["name"].value;
+  let email = document.forms["appointmentForm"]["email"].value;
+  let phone = document.forms["appointmentForm"]["phone"].value;
+  let date = document.forms["appointmentForm"]["date"].value;
+  let time = document.forms["appointmentForm"]["time"].value;
+
+  let isValid = true; // Flag to track overall form validity
+
+  // Name validation
+  if (name == "") {
+    document.getElementById("nameError").textContent = "Name must be filled out";
+    isValid = false;
+  }
+
+  // Email validation
+  if (email == "") {
+    document.getElementById("emailError").textContent = "Email must be filled out";
+    isValid = false;
+  } else {
+    if (!isValidEmail(email)) {
+      document.getElementById("emailError").textContent = "Invalid email format";
+      isValid = false;
+    }
+  }
+
+  // Phone validation
+  if (phone == "") {
+    document.getElementById("phoneError").textContent = "Phone must be filled out";
+    isValid = false;
+  } else {
+    if (!isValidPhoneNumber(phone)) {
+      document.getElementById("phoneError").textContent = "Invalid phone number format (10 digits required)";
+      isValid = false;
+    }
+  }
+
+  // Date validation
+  if (date == "") {
+    document.getElementById("dateError").textContent = "Date must be filled out";
+    isValid = false;
+  }
+
+    // Time validation
+    if (time == "") {
+        document.getElementById("timeError").textContent = "Time must be filled out";
+        isValid = false;
+    }
+
+
+  return isValid; // Return false if any validation fails
+}
+
+
+function isValidEmail(email) 
+{
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+function isValidPhoneNumber(phone) {
+  const phoneRegex = /^\d{10}$/;  // Assumes 10-digit US phone number format.  Adjust as needed.
+  return phoneRegex.test(phone);
+}
+
+
+</script>
+
+</body>
+</html>

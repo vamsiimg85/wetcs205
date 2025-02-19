@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Find the Season</title>
+</head>
+<body>
+    <h2>Find the Season</h2>
+    <p>Enter a month number (1-12) to find out the season.</p>
+
+    <label for="month">Enter month number (1-12):</label>
+    <input type="number" id="month"><br><br>
+
+    <button onclick="findSeason()">Find Season</button>
+    <p id="result"></p>
+
+    <script>
+        function findSeason() {
+            let month = parseInt(document.getElementById("month").value);
+            let season;
+
+            switch (month) {
+                case 12: case 1: case 2:
+                    season = "Winter";
+                    break;
+                case 3: case 4: case 5:
+                    season = "Spring";
+                    break;
+                case 6: case 7: case 8:
+                    season = "Summer";
+                    break;
+                case 9: case 10: case 11:
+                    season = "Autumn (Fall)";
+                    break;
+                default:
+                    season = "Invalid month! Please enter a number between 1 and 12.";
+            }
+
+            document.getElementById("result").innerText = `Season: ${season}`;
+        }
+    </script>
+</body>
+</html>

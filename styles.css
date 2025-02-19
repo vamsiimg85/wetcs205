@@ -1,0 +1,30 @@
+/* Styling for headings */
+h1 {
+    color: blue;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: darkgreen;
+    font-family: Verdana, sans-serif;
+}
+
+/* Styling for paragraphs */
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Styling for links */
+a {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: darkred;
+    text-decoration: underline;
+}

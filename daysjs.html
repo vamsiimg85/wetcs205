@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Days in a Month</title>
+</head>
+<body>
+    <h2>Find the Number of Days in a Month</h2>
+    <p>Enter a month number (1-12) and a year to check the number of days in that month.</p>
+
+    <label for="month">Enter month number (1-12):</label>
+    <input type="number" id="month"><br><br>
+
+    <label for="year">Enter year:</label>
+    <input type="number" id="year"><br><br>
+
+    <button onclick="findDays()">Find Days</button>
+    <p id="result"></p>
+
+    <script>
+        function findDays() {
+            let month = parseInt(document.getElementById("month").value);
+            let year = parseInt(document.getElementById("year").value);
+            let days;
+
+            switch (month) {
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    days = 31;
+                    break;
+                case 4: case 6: case 9: case 11:
+                    days = 30;
+                    break;
+                case 2:
+                    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                        days = 29; // Leap year
+                    } else {
+                        days = 28;
+                    }
+                    break;
+                default:
+                    days = "Invalid month! Please enter a number between 1 and 12.";
+            }
+
+            document.getElementById("result").innerText = `Days in Month ${month}, Year ${year}: ${days}`;
+        }
+    </script>
+</body>
+</html>

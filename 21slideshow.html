@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Slideshow</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .slideshow-container {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slideshow-container">
+        <img id="slide1" class="slide active" src="image1.jpg" alt="Slide 1">
+        <img id="slide2" class="slide" src="image2.jpg" alt="Slide 2">
+        <img id="slide3" class="slide" src="image3.jpg" alt="Slide 3">
+    </div>
+
+    <script type="text/javascript">
+        var currentSlide = 0;
+        var slides = document.getElementsByClassName('slide');
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active'); // Hide current slide
+            currentSlide = (currentSlide + 1) % slides.length; // Go to next slide, loop back to first
+            slides[currentSlide].classList.add('active'); // Show the next slide
+        }
+
+        setInterval(showNextSlide, 3000); // Change slide every 3 seconds
+    </script>
+
+</body>
+</html>

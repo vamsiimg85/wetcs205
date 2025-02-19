@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email with EmailJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <h2>Send an Email</h2>
+    <form id="emailForm">
+        <label for="toEmail">Recipient Email:</label>
+        <input type="email" id="toEmail" required><br><br>
+
+        <label for="toName">To Name:</label>
+        <input type="text" id="toName" required><br><br>
+
+        <label for="fromName">Your Name:</label>
+        <input type="text" id="fromName" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" required></textarea><br><br>
+
+        <button type="button" onclick="sendEmail()">Send Email</button>
+    </form>
+
+    <script>
+        (function() {
+            emailjs.init("QEJRhjAlkjbqqVCxx"); // Your Public Key
+        })();
+
+        function sendEmail() {
+            var templateParams = {
+                to_email: document.getElementById("toEmail").value, // Dynamic email input
+                to_name: document.getElementById("toName").value,
+                from_name: document.getElementById("fromName").value,
+                message: document.getElementById("message").value
+            };
+
+            emailjs.send("service_z1x0lvc", "template_08f996e", templateParams)
+            .then(function(response) {
+                alert("Email sent successfully!");
+                console.log("SUCCESS!", response.status, response.text);
+            }, function(error) {
+                alert("Failed to send email.");
+                console.log("FAILED...", error);
+            });
+        }
+    </script>
+</body>
+</html>

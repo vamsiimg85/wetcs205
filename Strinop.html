@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Object in JavaScript</title>
+</head>
+<body>
+
+    <h2>String Object in JavaScript</h2>
+
+    <script>
+        //   String Declaration
+        var str = "Hello, JavaScript!";
+
+        //   1. String Length
+        document.write("<b>Original String:</b> " + str + "<br><br>");
+        document.write("<b>String Length:</b> " + str.length + "<br><br>");
+
+        //   2. Convert to Upper & Lower Case
+        document.write("<b>Uppercase:</b> " + str.toUpperCase() + "<br><br>");
+        document.write("<b>Lowercase:</b> " + str.toLowerCase() + "<br><br>");
+
+        //   3. Extract Substring
+        document.write("<b>Substring (0 to 5):</b> " + str.substring(0, 5) + "<br><br>");
+
+        //   4. Slice
+        document.write("<b>Slice (7 to 17):</b> " + str.slice(7, 17) + "<br><br>");
+
+        //   5. Find Index of a Word
+        document.write("<b>Index of 'JavaScript':</b> " + str.indexOf("JavaScript") + "<br><br>");
+
+        //   6. Replace a Word
+        document.write("<b>Replace 'JavaScript' with 'World':</b> " + str.replace("JavaScript", "World") + "<br><br>");
+
+        //   7. Check if a Word Exists
+        document.write("<b>Includes 'Java'?:</b> " + str.includes("Java") + "<br><br>");
+
+        //   8. Split String into an Array
+        var words = str.split(" ");
+        document.write("<b>Split Words:</b> " + words + "<br><br>");
+
+        //   9. Trim Whitespace
+        var str2 = "   Hello, World!   ";
+        document.write("<b>Trimmed String:</b> '" + str2.trim() + "'<br><br>");
+
+        //   10. Character at a Position
+        document.write("<b>Character at index 7:</b> " + str.charAt(7) + "<br><br>");
+
+        //   11. Concatenation
+        var str3 = " Welcome to JS!";
+        document.write("<b>Concatenated String:</b> " + str.concat(str3) + "<br><br>");
+
+        //   12. Repeat String
+        document.write("<b>Repeat 'Hi!' 3 times:</b> " + "Hi! ".repeat(3) + "<br><br>");
+    </script>
+
+</body>
+</html>

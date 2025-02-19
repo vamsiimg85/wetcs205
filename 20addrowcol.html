@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic Table</title>
+<style>
+  table, td, th {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h2>Dynamic Table</h2>
+
+<table id="myTable">
+  <tr>
+    <td>1</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>4</td>
+  </tr>
+</table>
+
+<br>
+
+<button onclick="addRow()">Add Row</button>
+<button onclick="addColumn()">Add Column</button>
+
+<script>
+function addRow() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(-1); // Add at the end [2][3][4]
+
+  // Add cells to the new row
+  var cellCount = table.rows[0].cells.length;
+  for (var i = 0; i < cellCount; i++) {
+    var cell = row.insertCell(i);
+    cell.textContent = "New"; // You can add dynamic content here
+  }
+}
+
+function addColumn() {
+  var table = document.getElementById("myTable");
+  var rows = table.rows;
+
+  for (var i = 0; i < rows.length; i++) {
+    var cell = rows[i].insertCell(-1); // Add at the end
+    cell.textContent = "New"; // You can add dynamic content here
+  }
+}
+</script>
+
+</body>
+</html>

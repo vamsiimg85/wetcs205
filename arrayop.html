@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods in JavaScript</title>
+</head>
+<body>
+
+    <h2>Array Methods in JavaScript</h2>
+
+    <script>
+        // ✅ 1. Declare an array using 'var'
+        var fruits = ["Apple", "Banana", "Cherry"];
+        document.write("<b>Original Array:</b> " + fruits + "<br><br>");
+
+        // ✅ 2. push() - Add an element to the end
+        fruits.push("Mango");
+        document.write("<b>After push():</b> " + fruits + "<br><br>");
+
+        // ✅ 3. pop() - Remove the last element
+        fruits.pop();
+        document.write("<b>After pop():</b> " + fruits + "<br><br>");
+
+        // ✅ 4. unshift() - Add an element to the beginning
+        fruits.unshift("Orange");
+        document.write("<b>After unshift():</b> " + fruits + "<br><br>");
+
+        // ✅ 5. shift() - Remove the first element
+        fruits.shift();
+        document.write("<b>After shift():</b> " + fruits + "<br><br>");
+
+        // ✅ 6. length - Get the array length
+        document.write("<b>Array Length:</b> " + fruits.length + "<br><br>");
+
+        // ✅ 7. forEach() - Iterate through the array
+        document.write("<b>Using forEach():</b><br>");
+        fruits.forEach(function(fruit, index) {
+            document.write(index + " - " + fruit + "<br>");
+        });
+        document.write("<br>");
+
+        // ✅ 8. map() - Create a new array by transforming
+        var upperCaseFruits = fruits.map(function(fruit) {
+            return fruit.toUpperCase();
+        });
+        document.write("<b>After map() (Uppercase Fruits):</b> " + upperCaseFruits + "<br><br>");
+
+        // ✅ 9. filter() - Filter elements by condition
+        var filteredFruits = fruits.filter(function(fruit) {
+            return fruit.includes("a");
+        });
+        document.write("<b>After filter() (Fruits with 'a'):</b> " + filteredFruits + "<br><br>");
+
+        // ✅ 10. indexOf() - Find index of an element
+        var index = fruits.indexOf("Banana");
+        document.write("<b>Index of 'Banana':</b> " + index + "<br><br>");
+
+        // ✅ 11. slice() - Extract a portion of the array
+        var slicedFruits = fruits.slice(0, 2);
+        document.write("<b>After slice():</b> " + slicedFruits + "<br><br>");
+
+        // ✅ 12. splice() - Add or remove elements
+        fruits.splice(1, 1, "Grapes");
+        document.write("<b>After splice() (Replace Banana with Grapes):</b> " + fruits + "<br><br>");
+
+        // ✅ 13. concat() - Merge two arrays
+        var moreFruits = ["Pineapple", "Strawberry"];
+        var allFruits = fruits.concat(moreFruits);
+        document.write("<b>After concat() (Merging Arrays):</b> " + allFruits + "<br><br>");
+
+        // ✅ 14. reverse() - Reverse the array
+        var reversedFruits = fruits.reverse();
+        document.write("<b>After reverse():</b> " + reversedFruits + "<br><br>");
+
+        // ✅ 15. sort() - Sort the array
+        var sortedFruits = fruits.sort();
+        document.write("<b>After sort():</b> " + sortedFruits + "<br><br>");
+
+    </script>
+
+</body>
+</html>

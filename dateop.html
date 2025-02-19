@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Object in JavaScript</title>
+</head>
+<body>
+
+    <h2>Date Object in JavaScript</h2>
+
+    <script>
+        //   1. Create a Date object (current date & time)
+        var currentDate = new Date();
+        document.write("<b>Current Date & Time:</b> " + currentDate + "<br><br>");
+
+        //   2. Get the full year
+        document.write("<b>Year:</b> " + currentDate.getFullYear() + "<br><br>");
+
+        //  3. Get the month (0-11, where 0 = January)
+        document.write("<b>Month:</b> " + (currentDate.getMonth() + 1) + "<br><br>");
+
+        //   4. Get the day of the month (1-31)
+        document.write("<b>Day of Month:</b> " + currentDate.getDate() + "<br><br>");
+
+        //   5. Get the day of the week (0-6, where 0 = Sunday)
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        document.write("<b>Day of the Week:</b> " + days[currentDate.getDay()] + "<br><br>");
+
+        //   6. Get the hours (0-23)
+        document.write("<b>Hours:</b> " + currentDate.getHours() + "<br><br>");
+
+        //   7. Get the minutes (0-59)
+        document.write("<b>Minutes:</b> " + currentDate.getMinutes() + "<br><br>");
+
+        //   8. Get the seconds (0-59)
+        document.write("<b>Seconds:</b> " + currentDate.getSeconds() + "<br><br>");
+
+        //   9. Get the milliseconds (0-999)
+        document.write("<b>Milliseconds:</b> " + currentDate.getMilliseconds() + "<br><br>");
+
+        //   10. Get the timestamp (milliseconds since Jan 1, 1970)
+        document.write("<b>Timestamp (ms since 1970):</b> " + currentDate.getTime() + "<br><br>");
+
+        //   11. Set a custom date (YYYY, MM, DD)
+        var customDate = new Date(2025, 1, 4); // February 4, 2025 (Month is 0-based)
+        document.write("<b>Custom Date (Feb 4, 2025):</b> " + customDate + "<br><br>");
+
+        //   12. Format date to a readable string
+        document.write("<b>Formatted Date:</b> " + currentDate.toDateString() + "<br><br>");
+
+        //   13. Format date with time
+        document.write("<b>Formatted Date & Time:</b> " + currentDate.toLocaleString() + "<br><br>");
+
+        //   14. Extract only the time
+        document.write("<b>Formatted Time:</b> " + currentDate.toLocaleTimeString() + "<br><br>");
+
+        //   15. Extract only the date
+        document.write("<b>Formatted Date Only:</b> " + currentDate.toLocaleDateString() + "<br><br>");
+
+    </script>
+
+</body>
+</html>

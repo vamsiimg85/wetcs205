@@ -5,9 +5,16 @@
     <script>
         function getSelectedValue() {
             var radios = document.getElementsByName("gender");
+            var radios1 = document.getElementsByName("gender1");
             for (var i = 0; i < radios.length; i++) {
                 if (radios[i].checked) {
                     document.getElementById("result").innerHTML = "Selected Gender: " + radios[i].value;
+                    
+                }
+            }
+            for (var i = 0; i < radios1.length; i++) {
+                if (radios1[i].checked) {
+                    document.getElementById("result1").innerHTML = "Selected Gender: " + radios1[i].value;
                     return;
                 }
             }
@@ -20,8 +27,12 @@
     <label><input type="radio" name="gender" value="Female"> Female</label>
     <label><input type="radio" name="gender" value="Other"> Other</label>
     <br><br>
+    <label><input type="radio" name="gender1" value="cse"> cse</label>
+    <label><input type="radio" name="gender1" value="ece"> ece</label>
+    <label><input type="radio" name="gender1" value="eee">eee</label>
+    <br><br>
     <button onclick="getSelectedValue()">Show Selected</button>
     <p id="result"></p>
-
+    <p id="result1"></p>
 </body>
 </html>

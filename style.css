@@ -1,0 +1,50 @@
+/* Basic page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+/* Login box styling */
+.login-box {
+    background: white;
+    width: 300px;
+    padding: 20px;
+    margin: 100px auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px gray;
+}
+
+/* Input fields */
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 8px;
+    background: #4285F4;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #357ae8;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #4285F4;
+}
+
+a:hover {
+    text-decoration: underline;
+}

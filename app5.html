@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification App</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+</head>
+<body>
+    <h2>Object Recognition using Image Classification</h2>
+
+    <input type="file" id="imageUpload" accept="image/*">
+    <br><br>
+    <img id="previewImage" width="300">
+    <br><br>
+    <button onclick="classifyImage()">Classify Image</button>
+    <br><br>
+    <h3>Results:</h3>
+    <p id="result"></p>
+
+    <script>
+        let model;
+        
+        // Load the MobileNet model
+        async function loadModel() {
+            model = await mobilenet.load();
+            console.log("Model Loaded!");
+        }
+
+        // Preview the uploaded image
+        document.getElementById('imageUpload').addEventListener('change', function(event) {
+            let file = event.target.files[0];
+            let reader = new FileReader();
+
+            reader.onload = function(e) {
+                let imgElement = document.getElementById('previewImage');
+                imgElement.src = e.target.result;
+            };
+
+            reader.readAsDataURL(file);
+        });
+
+        // Classify the uploaded image
+        async function classifyImage() {
+            let imgElement = document.getElementById('previewImage');
+            if (!imgElement.src) {
+                alert("Please upload an image first!");
+                return;
+            }
+            
+            let predictions = await model.classify(imgElement);
+            document.getElementById('result').innerHTML = 
+                `Prediction: ${predictions[0].className} <br> Confidence: ${(predictions[0].probability * 100).toFixed(2)}%`;
+        }
+
+        loadModel(); // Load the model when the page loads
+    </script>
+</body>
+</html>

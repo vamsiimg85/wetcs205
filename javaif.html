@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>If-Else Example</title>
+</head>
+<body>
+    <h2>Check if a Number is Positive, Negative, or Zero</h2>
+    <label for="num">Enter a number:</label>
+    <input type="text" id="num">
+    <button onclick="checkNumber()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkNumber() {
+            var number = document.getElementById("num").value;
+
+            // Convert input to a number
+            number = Number(number);
+
+            var result;
+            if (number > 0) {
+                result = "The number is positive.";
+            } else if (number < 0) {
+                result = "The number is negative.";
+            } else {
+                result = "The number is zero.";
+            }
+
+            // Display result
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>

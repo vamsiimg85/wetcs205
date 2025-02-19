@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <title>Display Current Date and Time</title>
     <script>
         function displayDateTime() {
             // Create a new Date object
             var currentDateTime = new Date();
-            
             // Get the current date and time as a string
             var dateTimeString = "Current Date and Time: " + currentDateTime.toString();
-            
             // Display the current date and time in the 'result' paragraph
             document.getElementById("result").innerHTML = dateTimeString;
         }
     </script>
 </head>
 <body>
-
     <h2>Click the Button to Display Current Date and Time</h2>
     <button onclick="displayDateTime()">Show Date and Time</button>
     <p id="result"></p>
-
 </body>
 </html>
