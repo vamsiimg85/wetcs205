@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AngularJS Real-Time Search</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="searchApp" ng-controller="searchCtrl">
+
+  <h2>Search Student List</h2>
+  
+  <input type="text" ng-model="searchText" placeholder="Search by name...">
+
+  <ul>
+    <li ng-repeat="student in students | filter:searchText">
+      {{ student }}
+    </li>
+  </ul>
+
+  <script>
+    var app = angular.module("searchApp", []);
+    app.controller("searchCtrl", function($scope) {
+      $scope.students = [
+        "Rahul Sharma",
+        "Anjali Mehta",
+        "David Kumar",
+        "Sneha Reddy",
+        "Kiran Patel"
+      ];
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="currencyApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Currency Converter</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input, select { padding: 5px; margin: 5px; }
+  </style>
+</head>
+<body>
+
+  <div ng-controller="CurrencyController">
+    <h2>Currency Converter</h2>
+    
+    <label>Amount:</label>
+    <input type="number" ng-model="amount" placeholder="Enter amount">
+
+    <label>From:</label>
+    <select ng-model="fromCurrency">
+      <option value="INR">INR</option>
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+    </select>
+
+    <label>To:</label>
+    <select ng-model="toCurrency">
+      <option value="INR">INR</option>
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+    </select>
+
+    <button ng-click="convert()">Convert</button>
+
+    <h3 ng-if="convertedAmount !== null">
+      Converted Amount: {{convertedAmount | number:2}} {{toCurrency}}
+    </h3>
+  </div>
+
+  <script>
+    var app = angular.module('currencyApp', []);
+
+    app.controller('CurrencyController', function($scope) {
+      // Static conversion rates
+      const rates = {
+        'INR': { 'USD': 0.012, 'EUR': 0.011, 'INR': 1 },
+        'USD': { 'INR': 83.0, 'EUR': 0.92, 'USD': 1 },
+        'EUR': { 'INR': 90.0, 'USD': 1.08, 'EUR': 1 }
+      };
+
+      $scope.amount = 0;
+      $scope.fromCurrency = 'INR';
+      $scope.toCurrency = 'USD';
+      $scope.convertedAmount = null;
+
+      $scope.convert = function() {
+        const rate = rates[$scope.fromCurrency][$scope.toCurrency];
+        $scope.convertedAmount = $scope.amount * rate;
+      };
+    });
+  </script>
+
+</body>
+</html>

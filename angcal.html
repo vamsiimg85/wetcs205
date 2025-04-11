@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AngularJS Calculator</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="calcApp" ng-controller="calcCtrl">
+  <h2>Simple Calculator</h2>
+  <input type="number" ng-model="num1" placeholder="Enter first number">
+  <input type="number" ng-model="num2" placeholder="Enter second number">
+  <br><br>
+  <button ng-click="result = num1 + num2">Add</button>
+  <button ng-click="result = num1 - num2">Subtract</button>
+  <button ng-click="result = num1 * num2">Multiply</button>
+  <button ng-click="result = num1 / num2">Divide</button>
+  <h3>Result: {{ result }}</h3>
+  <script>
+    var app = angular.module("calcApp", []);
+    app.controller("calcCtrl", function($scope) {
+      $scope.num1 = 0;
+      $scope.num2 = 0
+      ;
+      $scope.result = 0;
+    });
+  </script>
+</body>
+</html>

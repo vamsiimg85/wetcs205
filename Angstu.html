@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AngularJS Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="studentApp" ng-controller="studentCtrl">
+  <h2>Student List</h2>
+  <ul>
+    <li ng-repeat="student in students">{{ student }}</li>
+  </ul>
+  <input type="text" ng-model="newStudent" placeholder="Enter student name">
+  <button ng-click="addStudent()">Add Student</button>
+  <script>
+    var app = angular.module("studentApp", []);
+    app.controller("studentCtrl", function($scope) {
+      $scope.students = ["John", "Alice", "Mark"];
+      $scope.addStudent = function() {
+        if ($scope.newStudent) {
+          $scope.students.push($scope.newStudent);
+          $scope.newStudent = ""; // Clear the input
+        }
+      };
+    });
+  </script></body></html>
